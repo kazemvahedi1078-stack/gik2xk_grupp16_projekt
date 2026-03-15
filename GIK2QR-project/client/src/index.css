@@ -1,0 +1,46 @@
+/* index.css – Globala stilar för webbshopen.
+   Definierar mörkt tema, typsnitt och hovring-effekter på produktkort. */
+
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #1e1e1e;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* Produktkort – vit bakgrund med avrundade hörn och hover-effekt */
+.card {
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Produktbilder i kort – fast höjd med cover-fit */
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Rubriker – fetare text */
+h1 {
+  font-weight: 600;
+}
