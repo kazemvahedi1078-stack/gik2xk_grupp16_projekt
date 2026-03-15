@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Cart.init(
     {
-      userId: { type: DataTypes.INTEGER, allowNull: false }
+      userId: { type: DataTypes.INTEGER, allowNull: false },
+      paidAt: { type: DataTypes.DATE, allowNull: true, defaultValue: null }
     },
     { sequelize, modelName: 'Cart' }
   );
