@@ -6,7 +6,6 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  background-color: #1e1e1e;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,8 +16,10 @@
 body {
   margin: 0;
   min-width: 320px;
-  background-color: #1e1e1e;
+  min-height: 100vh;
   color: white;
+  background: linear-gradient(145deg, #0f1a2e 0%, #1a1035 35%, #0d2a2a 65%, #121220 100%);
+  background-attachment: fixed;
 }
 
 /* Produktkort – vit bakgrund med avrundade hörn och hover-effekt */

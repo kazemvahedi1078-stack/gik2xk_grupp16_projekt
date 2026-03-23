@@ -63,6 +63,8 @@ async function update(id, body) {
 
 // Tar bort en produkt. Returnerar antal borttagna rader (0 om ej hittad).
 async function remove(id) {
+  await db.CartItem.destroy({ where: { productId: id } });
+  await db.Review.destroy({ where: { productId: id } });
   return await db.Product.destroy({ where: { id } });
 }
 

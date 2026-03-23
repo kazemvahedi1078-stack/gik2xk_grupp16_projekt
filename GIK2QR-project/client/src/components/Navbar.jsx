@@ -9,7 +9,7 @@ function Navbar({ setPage, cartCount, onNewProduct }) {
         style={{ cursor: "pointer" }}
         onClick={() => setPage("products")}
       >
-        My Webshop
+        Min Webshop
       </span>
 
       <div className="d-flex gap-2">

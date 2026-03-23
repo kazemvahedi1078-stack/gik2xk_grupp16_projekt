@@ -9,8 +9,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
-      this.hasMany(models.Review, { foreignKey: 'productId' });
-      this.hasMany(models.CartItem, { foreignKey: 'productId' });
+      this.hasMany(models.Review, { foreignKey: 'productId', onDelete: 'CASCADE' });
+      this.hasMany(models.CartItem, { foreignKey: 'productId', onDelete: 'CASCADE' });
     }
   }
 

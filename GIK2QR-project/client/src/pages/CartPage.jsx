@@ -8,7 +8,7 @@ import {
   removeFromCart
 } from "../services/api";
 
-function CartPage({ onCartUpdated }) {
+function CartPage({ onCartUpdated, goBack }) {
   const [cart, setCart] = useState(null);
   const [error, setError] = useState("");
 
@@ -80,6 +80,10 @@ function CartPage({ onCartUpdated }) {
 
   return (
     <div className="container mt-4 text-white">
+      <button className="btn btn-outline-light mb-3" onClick={goBack}>
+        <i className="bi bi-arrow-left"></i> Tillbaka
+      </button>
+
       <h1 className="mb-4">Varukorg</h1>
 
       {cart.items.length === 0 ? (

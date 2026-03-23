@@ -44,6 +44,6 @@ server.on("error", (err) => {
 
 // Synkronisera databasmodeller med MySQL
 db.sequelize
-  .sync()
+  .sync({ alter: true })
   .then(() => console.log("Database synced"))
   .catch((err) => console.log("Sync error:", err.message));

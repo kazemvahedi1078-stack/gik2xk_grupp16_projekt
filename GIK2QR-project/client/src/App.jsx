@@ -60,7 +60,7 @@ function App() {
 
       {/* Varukorg */}
       {page === "cart" && (
-        <CartPage onCartUpdated={loadCartCount} />
+        <CartPage onCartUpdated={loadCartCount} goBack={() => setPage("products")} />
       )}
 
       {/* Produktdetaljvy med recensioner */}
