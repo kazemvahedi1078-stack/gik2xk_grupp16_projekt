@@ -16,7 +16,7 @@ const PORT = 5000;
 
 // Tillåt förfrågningar från frontend (Vite dev-server på port 5173)
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175"]
 }));
 
 // Aktivera JSON-parsing av request body
@@ -42,8 +42,15 @@ server.on("error", (err) => {
   console.log("Server error:", err.message);
 });
 
-// Synkronisera databasmodeller med MySQL
+// Synkronisera databasmodeller med MySQL och skapa standardanvändare
 db.sequelize
   .sync({ alter: true })
-  .then(() => console.log("Database synced"))
+  .then(async () => {
+    console.log("Database synced");
+    const [user] = await db.User.findOrCreate({
+      where: { id: 1 },
+      defaults: { name: "Användare", email: "user@webshop.se" }
+    });
+    console.log("Default user ready (id: " + user.id + ")");
+  })
   .catch((err) => console.log("Sync error:", err.message));

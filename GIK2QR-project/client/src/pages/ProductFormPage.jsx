@@ -65,7 +65,7 @@ function ProductFormPage({ editProductId, goBack }) {
       }
     } catch (error) {
       console.log("Product form error:", error);
-      setMessage("Något gick fel. Försök igen.");
+      setMessage("Fel: " + error.message + ". Kontrollera att servern körs!");
     }
   };
 
