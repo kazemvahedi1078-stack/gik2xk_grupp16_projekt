@@ -41,7 +41,6 @@ function ProductCard({ product, openProduct, onCartUpdated, onEditProduct, onPro
             src={product.imageUrl}
             alt={product.name}
             className="card-img-top"
-            style={{ height: "220px", objectFit: "cover" }}
           />
         )}
 

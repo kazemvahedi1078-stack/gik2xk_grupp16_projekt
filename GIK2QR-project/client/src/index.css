@@ -35,10 +35,14 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Produktbilder i kort – fast höjd med cover-fit */
-.card img {
-  height: 220px;
-  object-fit: cover;
+/* Produktbilder i kort – fast proportioner med cover-fit */
+.card .card-img-top {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover !important;
+  object-position: center;
+  display: block;
 }
 
 /* Rubriker – fetare text */
